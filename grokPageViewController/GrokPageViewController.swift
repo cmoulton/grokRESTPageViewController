@@ -18,17 +18,9 @@ class GrokPageViewController: UIPageViewController, UIPageViewControllerDataSour
     self.delegate = self
     self.dataSource = self
     
-    // toss in some dummy data for now
-    dataObjects.addObject("Hi")
-    dataObjects.addObject("Yo")
-    dataObjects.addObject("Bonjour")
-    
-    // set first view controller to display
-    if let firstVC = viewControllerAtIndex(0)
-    {
-      let viewControllers = [firstVC]
-      self.setViewControllers(viewControllers, direction: UIPageViewControllerNavigationDirection.Forward, animated: false, completion: nil)
-    }
+    loadStockQuoteItems()
+    // TODO: show progress indicator or some indication that we're doing something
+    // by loading an initial single view controller with a placeholder view
   }
   
   override func didReceiveMemoryWarning() {
@@ -36,18 +28,42 @@ class GrokPageViewController: UIPageViewController, UIPageViewControllerDataSour
     // Dispose of any resources that can be recreated.
   }
   
+  func loadStockQuoteItems() {
+    let symbols = ["AAPL", "GOOG", "YHOO"]
+    StockQuoteItem.getFeedItems(symbols, completionHandler:{ (items, error) in
+      if error != nil
+      {
+        var alert = UIAlertController(title: "Error", message: "Could not load stock quotes \(error?.localizedDescription)", preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.Default, handler: nil))
+        self.presentViewController(alert, animated: true, completion: nil)
+      }
+      if let stocks = items {
+        for stock in stocks { // because we're getting back a Swift array but it's easier to do the PageController in an NSMutableArray
+          self.dataObjects.addObject(stock)
+        }
+      }
+
+      // set first view controller to display
+      if let firstVC = self.viewControllerAtIndex(0)
+      {
+        let viewControllers = [firstVC]
+        self.setViewControllers(viewControllers, direction: UIPageViewControllerNavigationDirection.Forward, animated: false, completion: nil)
+      }
+    })
+  }
+  
   // MARK: UIPageViewControllerDataSource & UIPageViewControllerDelegate
   func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
-    if let currentPageViewController = viewController as? SinglePageViewController, currentDataObject:AnyObject = currentPageViewController.dataObject {
-      let currentIndex = dataObjects.indexOfObject(currentDataObject)
+    if let currentPageViewController = viewController as? SinglePageViewController, currentStock:AnyObject = currentPageViewController.stock {
+      let currentIndex = dataObjects.indexOfObject(currentStock)
       return viewControllerAtIndex(currentIndex - 1)
     }
     return nil
   }
   
   func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
-    if let currentPageViewController = viewController as? SinglePageViewController, currentDataObject:AnyObject = currentPageViewController.dataObject {
-      let currentIndex = dataObjects.indexOfObject(currentDataObject)
+    if let currentPageViewController = viewController as? SinglePageViewController, currentStock:AnyObject = currentPageViewController.stock {
+      let currentIndex = dataObjects.indexOfObject(currentStock)
       return viewControllerAtIndex(currentIndex + 1)
     }
     return nil
@@ -60,7 +76,7 @@ class GrokPageViewController: UIPageViewController, UIPageViewControllerDataSour
     let storyboard = UIStoryboard(name: "Main", bundle: nil)
     let vc = storyboard.instantiateViewControllerWithIdentifier("SinglePageViewController") as! SinglePageViewController
     let dataObject:AnyObject = dataObjects[index]
-    vc.dataObject = dataObject
+    vc.stock = dataObject as? StockQuoteItem
     return vc
   }
   

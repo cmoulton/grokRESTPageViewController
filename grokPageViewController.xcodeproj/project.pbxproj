@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BB89812654D941F518DA4323 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B206D0CC1E8E6F7B955FC13 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		CF5F27B31B84AC00002039B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5F27B21B84AC00002039B1 /* AppDelegate.swift */; };
 		CF5F27B81B84AC00002039B1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF5F27B61B84AC00002039B1 /* Main.storyboard */; };
 		CF5F27BA1B84AC00002039B1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF5F27B91B84AC00002039B1 /* Images.xcassets */; };
@@ -14,6 +15,8 @@
 		CF5F27C91B84AC00002039B1 /* grokPageViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5F27C81B84AC00002039B1 /* grokPageViewControllerTests.swift */; };
 		CF5F27D31B84B4ED002039B1 /* GrokPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5F27D21B84B4ED002039B1 /* GrokPageViewController.swift */; };
 		CF5F27D51B84B606002039B1 /* SinglePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5F27D41B84B606002039B1 /* SinglePageViewController.swift */; };
+		CFD46C251B84BCCC00D5BD29 /* StockQuoteItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD46C241B84BCCC00D5BD29 /* StockQuoteItem.swift */; };
+		CFD46C271B84BD6200D5BD29 /* AlamofireRequest_ResponseJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD46C261B84BD6200D5BD29 /* AlamofireRequest_ResponseJSON.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +30,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1B206D0CC1E8E6F7B955FC13 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		886CC9B3DA760A45C59DEA2B /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		CF5F27AD1B84AC00002039B1 /* grokPageViewController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = grokPageViewController.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF5F27B11B84AC00002039B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CF5F27B21B84AC00002039B1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -38,6 +43,9 @@
 		CF5F27C81B84AC00002039B1 /* grokPageViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = grokPageViewControllerTests.swift; sourceTree = "<group>"; };
 		CF5F27D21B84B4ED002039B1 /* GrokPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GrokPageViewController.swift; sourceTree = "<group>"; };
 		CF5F27D41B84B606002039B1 /* SinglePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SinglePageViewController.swift; sourceTree = "<group>"; };
+		CFD46C241B84BCCC00D5BD29 /* StockQuoteItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StockQuoteItem.swift; sourceTree = "<group>"; };
+		CFD46C261B84BD6200D5BD29 /* AlamofireRequest_ResponseJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlamofireRequest_ResponseJSON.swift; sourceTree = "<group>"; };
+		DA05BB5581C2883A853E2216 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB89812654D941F518DA4323 /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,12 +67,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		27E3A5AB745FD9B5C7E25D0C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				886CC9B3DA760A45C59DEA2B /* Pods.debug.xcconfig */,
+				DA05BB5581C2883A853E2216 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		6D2520CB55222B66377D4D59 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1B206D0CC1E8E6F7B955FC13 /* Pods.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		CF5F27A41B84AC00002039B1 = {
 			isa = PBXGroup;
 			children = (
 				CF5F27AF1B84AC00002039B1 /* grokPageViewController */,
 				CF5F27C51B84AC00002039B1 /* grokPageViewControllerTests */,
 				CF5F27AE1B84AC00002039B1 /* Products */,
+				27E3A5AB745FD9B5C7E25D0C /* Pods */,
+				6D2520CB55222B66377D4D59 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -81,6 +109,8 @@
 			children = (
 				CF5F27B21B84AC00002039B1 /* AppDelegate.swift */,
 				CF5F27D21B84B4ED002039B1 /* GrokPageViewController.swift */,
+				CFD46C241B84BCCC00D5BD29 /* StockQuoteItem.swift */,
+				CFD46C261B84BD6200D5BD29 /* AlamofireRequest_ResponseJSON.swift */,
 				CF5F27D41B84B606002039B1 /* SinglePageViewController.swift */,
 				CF5F27B61B84AC00002039B1 /* Main.storyboard */,
 				CF5F27B91B84AC00002039B1 /* Images.xcassets */,
@@ -122,9 +152,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CF5F27CC1B84AC00002039B1 /* Build configuration list for PBXNativeTarget "grokPageViewController" */;
 			buildPhases = (
+				7C7A963D69A3ADFF101471DB /* Check Pods Manifest.lock */,
 				CF5F27A91B84AC00002039B1 /* Sources */,
 				CF5F27AA1B84AC00002039B1 /* Frameworks */,
 				CF5F27AB1B84AC00002039B1 /* Resources */,
+				995A7CF692362D2F4FA1CB48 /* Embed Pods Frameworks */,
+				B10C11FA088B78C45D019035 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -210,12 +243,62 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		7C7A963D69A3ADFF101471DB /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		995A7CF692362D2F4FA1CB48 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B10C11FA088B78C45D019035 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		CF5F27A91B84AC00002039B1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFD46C251B84BCCC00D5BD29 /* StockQuoteItem.swift in Sources */,
 				CF5F27D31B84B4ED002039B1 /* GrokPageViewController.swift in Sources */,
+				CFD46C271B84BD6200D5BD29 /* AlamofireRequest_ResponseJSON.swift in Sources */,
 				CF5F27D51B84B606002039B1 /* SinglePageViewController.swift in Sources */,
 				CF5F27B31B84AC00002039B1 /* AppDelegate.swift in Sources */,
 			);
@@ -344,6 +427,7 @@
 		};
 		CF5F27CD1B84AC00002039B1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 886CC9B3DA760A45C59DEA2B /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = grokPageViewController/Info.plist;
@@ -354,6 +438,7 @@
 		};
 		CF5F27CE1B84AC00002039B1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DA05BB5581C2883A853E2216 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = grokPageViewController/Info.plist;
@@ -415,6 +500,7 @@
 				CF5F27CE1B84AC00002039B1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CF5F27CF1B84AC00002039B1 /* Build configuration list for PBXNativeTarget "grokPageViewControllerTests" */ = {
 			isa = XCConfigurationList;
@@ -423,6 +509,7 @@
 				CF5F27D11B84AC00002039B1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

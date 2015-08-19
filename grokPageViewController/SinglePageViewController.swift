@@ -10,12 +10,15 @@ import UIKit
 
 class SinglePageViewController: UIViewController {
   @IBOutlet weak var dataLabel: UILabel!
-  var dataObject: AnyObject?
+  var stock: StockQuoteItem?
   
   override func viewWillAppear(animated: Bool) {
     super.viewWillAppear(animated)
-    if let pageObject:AnyObject = dataObject {
-      dataLabel.text = pageObject.description
+    
+    if let aSymbol = stock?.symbol, anAsk = stock?.ask, high = stock?.yearHigh, low = stock?.yearLow {
+      dataLabel.text = aSymbol + ": " + anAsk + "\n" + "Year High: " + high + "\n" + "Year Low: " + low
+    } else {
+      dataLabel.text = stock?.symbol
     }
   }
 }
