@@ -8,11 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		CF5F27B31B84AC00002039B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5F27B21B84AC00002039B1 /* AppDelegate.swift */; };
-		CF5F27B51B84AC00002039B1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5F27B41B84AC00002039B1 /* ViewController.swift */; };
 		CF5F27B81B84AC00002039B1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF5F27B61B84AC00002039B1 /* Main.storyboard */; };
 		CF5F27BA1B84AC00002039B1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF5F27B91B84AC00002039B1 /* Images.xcassets */; };
 		CF5F27BD1B84AC00002039B1 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF5F27BB1B84AC00002039B1 /* LaunchScreen.xib */; };
 		CF5F27C91B84AC00002039B1 /* grokPageViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5F27C81B84AC00002039B1 /* grokPageViewControllerTests.swift */; };
+		CF5F27D31B84B4ED002039B1 /* GrokPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5F27D21B84B4ED002039B1 /* GrokPageViewController.swift */; };
+		CF5F27D51B84B606002039B1 /* SinglePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5F27D41B84B606002039B1 /* SinglePageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,13 +30,14 @@
 		CF5F27AD1B84AC00002039B1 /* grokPageViewController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = grokPageViewController.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF5F27B11B84AC00002039B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CF5F27B21B84AC00002039B1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CF5F27B41B84AC00002039B1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		CF5F27B71B84AC00002039B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CF5F27B91B84AC00002039B1 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		CF5F27BC1B84AC00002039B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		CF5F27C21B84AC00002039B1 /* grokPageViewControllerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = grokPageViewControllerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF5F27C71B84AC00002039B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CF5F27C81B84AC00002039B1 /* grokPageViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = grokPageViewControllerTests.swift; sourceTree = "<group>"; };
+		CF5F27D21B84B4ED002039B1 /* GrokPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GrokPageViewController.swift; sourceTree = "<group>"; };
+		CF5F27D41B84B606002039B1 /* SinglePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SinglePageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,7 +80,8 @@
 			isa = PBXGroup;
 			children = (
 				CF5F27B21B84AC00002039B1 /* AppDelegate.swift */,
-				CF5F27B41B84AC00002039B1 /* ViewController.swift */,
+				CF5F27D21B84B4ED002039B1 /* GrokPageViewController.swift */,
+				CF5F27D41B84B606002039B1 /* SinglePageViewController.swift */,
 				CF5F27B61B84AC00002039B1 /* Main.storyboard */,
 				CF5F27B91B84AC00002039B1 /* Images.xcassets */,
 				CF5F27BB1B84AC00002039B1 /* LaunchScreen.xib */,
@@ -212,7 +215,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CF5F27B51B84AC00002039B1 /* ViewController.swift in Sources */,
+				CF5F27D31B84B4ED002039B1 /* GrokPageViewController.swift in Sources */,
+				CF5F27D51B84B606002039B1 /* SinglePageViewController.swift in Sources */,
 				CF5F27B31B84AC00002039B1 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
