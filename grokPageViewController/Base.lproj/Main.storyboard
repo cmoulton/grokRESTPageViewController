@@ -12,6 +12,41 @@
             </objects>
             <point key="canvasLocation" x="252" y="113"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="3Kr-y8-1oy">
+            <objects>
+                <viewController storyboardIdentifier="PlaceHolderViewController" id="XQF-Ut-9I5" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qsL-wL-hSc"/>
+                        <viewControllerLayoutGuide type="bottom" id="n7a-60-sSw"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="RON-nL-8Od">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="N3P-CW-VKR">
+                                <rect key="frame" x="282" y="228.5" width="37" height="37"/>
+                            </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Loading Stock Quotes..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2DH-8A-xLN">
+                                <rect key="frame" x="128" y="285.5" width="344" height="30"/>
+                                <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="28"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.29803922770000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="2DH-8A-xLN" secondAttribute="centerX" id="7AD-l5-sAe"/>
+                            <constraint firstAttribute="centerY" secondItem="2DH-8A-xLN" secondAttribute="centerY" id="F9W-sb-pJ9"/>
+                            <constraint firstItem="2DH-8A-xLN" firstAttribute="top" secondItem="N3P-CW-VKR" secondAttribute="bottom" constant="20" id="SC9-KR-GuJ"/>
+                            <constraint firstAttribute="centerX" secondItem="N3P-CW-VKR" secondAttribute="centerX" id="osT-6L-Glg"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EP3-uO-4We" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="252" y="779"/>
+        </scene>
         <!--Single Page View Controller-->
         <scene sceneID="8VM-bg-AaX">
             <objects>
@@ -26,12 +61,12 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iBx-I4-NsQ">
                                 <rect key="frame" x="20" y="40" width="560" height="540"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="42"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.0" green="0.29803922770000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="iBx-I4-NsQ" firstAttribute="leading" secondItem="lpB-Vb-Eax" secondAttribute="leading" constant="20" id="DxL-g4-8cb"/>
                             <constraint firstAttribute="trailing" secondItem="iBx-I4-NsQ" secondAttribute="trailing" constant="20" id="Gbx-hO-PwZ"/>

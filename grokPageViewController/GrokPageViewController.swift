@@ -17,10 +17,14 @@ class GrokPageViewController: UIPageViewController, UIPageViewControllerDataSour
     // Do any additional setup after loading the view, typically from a nib.
     self.delegate = self
     self.dataSource = self
+
+    // show progress indicator or some indication that we're doing something
+    // by loading an initial single view controller with a placeholder view
+    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+    let placeholderVC = storyboard.instantiateViewControllerWithIdentifier("PlaceHolderViewController") as! UIViewController
+    self.setViewControllers([placeholderVC], direction: UIPageViewControllerNavigationDirection.Forward, animated: false, completion: nil)
     
     loadStockQuoteItems()
-    // TODO: show progress indicator or some indication that we're doing something
-    // by loading an initial single view controller with a placeholder view
   }
   
   override func didReceiveMemoryWarning() {
@@ -47,7 +51,7 @@ class GrokPageViewController: UIPageViewController, UIPageViewControllerDataSour
       if let firstVC = self.viewControllerAtIndex(0)
       {
         let viewControllers = [firstVC]
-        self.setViewControllers(viewControllers, direction: UIPageViewControllerNavigationDirection.Forward, animated: false, completion: nil)
+        self.setViewControllers(viewControllers, direction: UIPageViewControllerNavigationDirection.Forward, animated: true, completion: nil)
       }
     })
   }
