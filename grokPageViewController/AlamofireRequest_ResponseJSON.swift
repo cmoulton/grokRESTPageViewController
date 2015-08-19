@@ -25,14 +25,17 @@ extension Alamofire.Request {
         {
           return (nil, jsonError)
         }
-        var objects: [T] = []
+        
         let json = SwiftyJSON.JSON(jsonData!)
+        
         var currentJSON = json
         if let path = pathToArray {
           for pathComponent in path {
             currentJSON = currentJSON[pathComponent]
           }
         }
+        
+        var objects: [T] = []
         for (index, item) in currentJSON {
           if let object = T(json: item)
           {
