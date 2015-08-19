@@ -8,14 +8,12 @@
 
 import UIKit
 
-class GrokPageViewController: UIPageViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate {
-  
+class GrokPageViewController: UIPageViewController, UIPageViewControllerDataSource {
   let dataController = StocksDataController()
   
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
-    self.delegate = self
     self.dataSource = self
 
     // show progress indicator or some indication that we're doing something
