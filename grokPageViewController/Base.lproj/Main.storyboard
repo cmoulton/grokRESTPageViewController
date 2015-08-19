@@ -48,39 +48,36 @@
             <point key="canvasLocation" x="252" y="779"/>
         </scene>
         <!--Single Page View Controller-->
-        <scene sceneID="8VM-bg-AaX">
+        <scene sceneID="UoT-1B-tyL">
             <objects>
-                <viewController storyboardIdentifier="SinglePageViewController" id="jOd-dr-Ofn" customClass="SinglePageViewController" customModule="grokPageViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SinglePageViewController" id="Qau-OV-Utg" customClass="SinglePageViewController" customModule="grokPageViewController" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Pff-GU-g56"/>
-                        <viewControllerLayoutGuide type="bottom" id="6xD-Ii-mgB"/>
+                        <viewControllerLayoutGuide type="top" id="izc-xn-jvK"/>
+                        <viewControllerLayoutGuide type="bottom" id="gOp-J1-0WU"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="lpB-Vb-Eax">
+                    <view key="view" contentMode="scaleToFill" id="BoJ-pu-bdz">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iBx-I4-NsQ">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FQJ-pZ-Qd9">
                                 <rect key="frame" x="20" y="40" width="560" height="540"/>
                                 <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="42"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.29803922770000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="iBx-I4-NsQ" firstAttribute="leading" secondItem="lpB-Vb-Eax" secondAttribute="leading" constant="20" id="DxL-g4-8cb"/>
-                            <constraint firstAttribute="trailing" secondItem="iBx-I4-NsQ" secondAttribute="trailing" constant="20" id="Gbx-hO-PwZ"/>
-                            <constraint firstItem="6xD-Ii-mgB" firstAttribute="top" secondItem="iBx-I4-NsQ" secondAttribute="bottom" constant="20" id="Lj0-3D-jFo"/>
-                            <constraint firstItem="iBx-I4-NsQ" firstAttribute="top" secondItem="Pff-GU-g56" secondAttribute="bottom" constant="20" id="m5o-pA-Wms"/>
+                            <constraint firstItem="FQJ-pZ-Qd9" firstAttribute="leading" secondItem="BoJ-pu-bdz" secondAttribute="leading" constant="20" id="2s4-l6-aiv"/>
+                            <constraint firstItem="FQJ-pZ-Qd9" firstAttribute="top" secondItem="izc-xn-jvK" secondAttribute="bottom" constant="20" id="QfC-LH-D8j"/>
+                            <constraint firstAttribute="trailing" secondItem="FQJ-pZ-Qd9" secondAttribute="trailing" constant="20" id="ZaZ-cQ-FlW"/>
+                            <constraint firstItem="gOp-J1-0WU" firstAttribute="top" secondItem="FQJ-pZ-Qd9" secondAttribute="bottom" constant="20" id="cOc-EG-RDB"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="dataLabel" destination="iBx-I4-NsQ" id="Xvy-uK-Os9"/>
-                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="PjT-mm-QvE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WTE-vJ-R89" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="893" y="113"/>
+            <point key="canvasLocation" x="192" y="1460"/>
         </scene>
     </scenes>
 </document>
