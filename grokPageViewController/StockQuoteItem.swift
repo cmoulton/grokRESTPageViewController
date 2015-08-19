@@ -47,7 +47,6 @@ class StockQuoteItem: ResponseJSONObjectSerializable {
   }
   
   class func endpointForFeed(symbols: Array<String>) -> String {
-    //    let wrappedSymbols = symbols.map { $0 = "\"" + $0 + "\"" }
     let symbolsString:String = "\", \"".join(symbols)
     let query = "select * from yahoo.finance.quotes where symbol in (\"\(symbolsString) \")&format=json&env=http://datatables.org/alltables.env"
     let encodedQuery = query.stringByAddingPercentEncodingWithAllowedCharacters(.URLHostAllowedCharacterSet())
