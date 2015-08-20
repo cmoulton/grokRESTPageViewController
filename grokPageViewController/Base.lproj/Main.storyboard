@@ -7,7 +7,7 @@
         <!--Grok Page View Controller-->
         <scene sceneID="T9n-6m-WYH">
             <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="NjW-Zl-fBE" customClass="GrokPageViewController" customModule="grokPageViewController" customModuleProvider="target" sceneMemberID="viewController"/>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="NjW-Zl-fBE" customClass="GrokPageViewController" customModule="grokPageViewController" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q0N-Df-fLa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="252" y="113"/>
@@ -59,7 +59,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FQJ-pZ-Qd9">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FQJ-pZ-Qd9">
                                 <rect key="frame" x="20" y="40" width="560" height="540"/>
                                 <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="42"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -74,6 +74,9 @@
                             <constraint firstItem="gOp-J1-0WU" firstAttribute="top" secondItem="FQJ-pZ-Qd9" secondAttribute="bottom" constant="20" id="cOc-EG-RDB"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="dataLabel" destination="FQJ-pZ-Qd9" id="Yyx-Z9-a3p"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WTE-vJ-R89" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
