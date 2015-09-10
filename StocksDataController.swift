@@ -14,13 +14,13 @@ class StocksDataController {
   
   func loadStockQuoteItems(completionHandler: (NSError?) -> Void) {
     let symbols = ["AAPL", "GOOG", "YHOO"]
-    StockQuoteItem.getFeedItems(symbols, completionHandler:{ (items, error) in
-      if error != nil
+    StockQuoteItem.getFeedItems(symbols, completionHandler:{ (result) in
+      if let error = result.error as? NSError
       {
         completionHandler(error)
         return
       }
-      if let stocks = items {
+      if let stocks = result.value {
         for stock in stocks { // because we're getting back a Swift array but it's easier to do the PageController in an NSMutableArray
           self.dataObjects.addObject(stock)
         }

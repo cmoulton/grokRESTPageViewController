@@ -15,37 +15,37 @@ public protocol ResponseJSONObjectSerializable {
 }
 
 extension Alamofire.Request {
-  public func responseArrayAtPath<T: ResponseJSONObjectSerializable>(pathToArray: [String]?, completionHandler: (NSURLRequest, NSHTTPURLResponse?, [T]?, NSError?) -> Void) -> Self {
+  public func responseArrayAtPath<T: ResponseJSONObjectSerializable>(pathToArray: [String]?, completionHandler: (NSURLRequest?, NSHTTPURLResponse?, Result<[T]>) -> Void) -> Self {
     let responseSerializer = GenericResponseSerializer<[T]> { request, response, data in
-      if let responseData = data
-      {
-        var jsonError: NSError?
-        let jsonData:AnyObject? = NSJSONSerialization.JSONObjectWithData(responseData, options: nil, error: &jsonError)
-        if jsonData == nil || jsonError != nil
-        {
-          return (nil, jsonError)
-        }
-        
-        let json = SwiftyJSON.JSON(jsonData!)
-        
-        var currentJSON = json
-        if let path = pathToArray {
-          for pathComponent in path {
-            currentJSON = currentJSON[pathComponent]
-          }
-        }
-        
-        var objects: [T] = []
-        for (index, item) in currentJSON {
-          if let object = T(json: item)
-          {
-            objects.append(object)
-          }
-        }
-        return (objects, nil)
+      guard let responseData = data else {
+        let failureReason = "Array could not be serialized because input data was nil."
+        let error = Error.errorWithCode(.DataSerializationFailed, failureReason: failureReason)
+        return .Failure(data, error)
       }
-      // TODO: handle & return appropriate error(s)
-      return (nil, nil)
+      
+      let jsonData:AnyObject?
+      do {
+        jsonData = try NSJSONSerialization.JSONObjectWithData(responseData, options: [])
+      } catch  {
+        return .Failure(responseData, error)
+      }
+      
+      let json = SwiftyJSON.JSON(jsonData!)
+      
+      var currentJSON = json
+      if let path = pathToArray {
+        for pathComponent in path {
+          currentJSON = currentJSON[pathComponent]
+        }
+      }
+      
+      var objects: [T] = []
+      for (_, item) in currentJSON {
+        if let object = T(json: item) {
+          objects.append(object)
+        }
+      }
+      return .Success(objects)
     }
     
     return response(responseSerializer: responseSerializer,

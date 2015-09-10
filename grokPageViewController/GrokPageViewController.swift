@@ -19,13 +19,13 @@ class GrokPageViewController: UIPageViewController, UIPageViewControllerDataSour
     // show progress indicator or some indication that we're doing something
     // by loading an initial single view controller with a placeholder view
     let storyboard = UIStoryboard(name: "Main", bundle: nil)
-    let placeholderVC = storyboard.instantiateViewControllerWithIdentifier("PlaceHolderViewController") as! UIViewController
+    let placeholderVC = storyboard.instantiateViewControllerWithIdentifier("PlaceHolderViewController") 
     self.setViewControllers([placeholderVC], direction: UIPageViewControllerNavigationDirection.Forward, animated: false, completion: nil)
     
     dataController.loadStockQuoteItems{ (error) in
       if error != nil
       {
-        var alert = UIAlertController(title: "Error", message: "Could not load stock quotes \(error?.localizedDescription)", preferredStyle: UIAlertControllerStyle.Alert)
+        let alert = UIAlertController(title: "Error", message: "Could not load stock quotes \(error?.localizedDescription)", preferredStyle: UIAlertControllerStyle.Alert)
         alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.Default, handler: nil))
         self.presentViewController(alert, animated: true, completion: nil)
       } else {

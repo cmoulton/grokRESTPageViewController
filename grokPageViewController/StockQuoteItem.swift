@@ -39,7 +39,7 @@ class StockQuoteItem: ResponseJSONObjectSerializable {
   let yearLow: String?
   
   required init?(json: SwiftyJSON.JSON) {
-    println(json)
+    print(json)
     self.symbol = json["symbol"].string
     self.ask = json["Ask"].string
     self.yearHigh = json["YearHigh"].string
@@ -47,7 +47,7 @@ class StockQuoteItem: ResponseJSONObjectSerializable {
   }
   
   class func endpointForFeed(symbols: Array<String>) -> String {
-    let symbolsString:String = "\", \"".join(symbols)
+    let symbolsString:String = symbols.joinWithSeparator("\", \"")
     let query = "select * from yahoo.finance.quotes where symbol in (\"\(symbolsString) \")&format=json&env=http://datatables.org/alltables.env"
     let encodedQuery = query.stringByAddingPercentEncodingWithAllowedCharacters(.URLHostAllowedCharacterSet())
     
@@ -55,10 +55,10 @@ class StockQuoteItem: ResponseJSONObjectSerializable {
     return endpoint
   }
   
-  class func getFeedItems(symbols: Array<String>, completionHandler: ([StockQuoteItem]?, NSError?) -> Void) {
+  class func getFeedItems(symbols: Array<String>, completionHandler: (Result<[StockQuoteItem]>) -> Void) {
     Alamofire.request(.GET, self.endpointForFeed(symbols))
-      .responseArrayAtPath(["query", "results", "quote"], completionHandler:{ (request, response, stocks: [StockQuoteItem]?, error) in
-        completionHandler(stocks, error)
+      .responseArrayAtPath(["query", "results", "quote"], completionHandler:{ (request, response, result: Result<[StockQuoteItem]>) in
+        completionHandler(result)
     })
   }
 }
