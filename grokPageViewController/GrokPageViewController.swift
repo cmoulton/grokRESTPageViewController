@@ -15,21 +15,26 @@ class GrokPageViewController: UIPageViewController, UIPageViewControllerDataSour
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
     self.dataSource = self
-
+    
     // show progress indicator or some indication that we're doing something
     // by loading an initial single view controller with a placeholder view
     let storyboard = UIStoryboard(name: "Main", bundle: nil)
-    let placeholderVC = storyboard.instantiateViewControllerWithIdentifier("PlaceHolderViewController") 
+    let placeholderVC = storyboard.instantiateViewControllerWithIdentifier("PlaceHolderViewController")
     self.setViewControllers([placeholderVC], direction: UIPageViewControllerNavigationDirection.Forward, animated: false, completion: nil)
     
     dataController.loadStockQuoteItems{ (error) in
-      if error != nil
-      {
-        let alert = UIAlertController(title: "Error", message: "Could not load stock quotes \(error?.localizedDescription)", preferredStyle: UIAlertControllerStyle.Alert)
-        alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.Default, handler: nil))
+      if error != nil {
+        let alert:UIAlertController
+        if let description = error?.localizedDescription {
+          alert = UIAlertController(title: "Error", message: "Could not load stock quotes \(description)", preferredStyle: UIAlertControllerStyle.Alert)
+        } else {
+          alert = UIAlertController(title: "Error", message: "Could not load stock quotes", preferredStyle: UIAlertControllerStyle.Alert)
+        }
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
         self.presentViewController(alert, animated: true, completion: nil)
-      } else {
-        // set first view controller to display
+      }
+      // set first view controller to display
+      if self.dataController.dataObjects.count > 0 {
         if let firstVC = self.viewControllerAtIndex(0) {
           let viewControllers = [firstVC]
           self.setViewControllers(viewControllers, direction: UIPageViewControllerNavigationDirection.Forward, animated: false, completion: nil)
@@ -54,7 +59,7 @@ class GrokPageViewController: UIPageViewController, UIPageViewControllerDataSour
     }
     return nil
   }
-
+  
   func viewControllerAtIndex(index: Int) -> UIViewController? {
     if let stock = dataController.stockAtIndex(index) {
       let storyboard = UIStoryboard(name: "Main", bundle: nil)
