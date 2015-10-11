@@ -17,6 +17,15 @@ class SinglePageViewController: UIViewController {
     
     if let aSymbol = stock?.symbol, anAsk = stock?.ask, high = stock?.yearHigh, low = stock?.yearLow {
       dataLabel.text = aSymbol + ": " + anAsk + "\n" + "Year High: " + high + "\n" + "Year Low: " + low
+      
+      let dateFormatter = NSDateFormatter()
+      dateFormatter.dateStyle = .ShortStyle
+      dateFormatter.timeStyle = .ShortStyle
+      
+      if let date = stock?.timeSaved {
+        let dateAsString = dateFormatter.stringFromDate(date)
+        dataLabel.text = dataLabel.text! + "\n" + "Loaded: " + dateAsString
+      }
     } else {
       dataLabel.text = stock?.symbol
     }
