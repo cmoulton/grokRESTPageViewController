@@ -15,6 +15,7 @@
 		CF5F27C91B84AC00002039B1 /* grokPageViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5F27C81B84AC00002039B1 /* grokPageViewControllerTests.swift */; };
 		CF5F27D31B84B4ED002039B1 /* GrokPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5F27D21B84B4ED002039B1 /* GrokPageViewController.swift */; };
 		CF5F27D51B84B606002039B1 /* SinglePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5F27D41B84B606002039B1 /* SinglePageViewController.swift */; };
+		CF6387451BCAB86900A36867 /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6387441BCAB86900A36867 /* PersistenceManager.swift */; settings = {ASSET_TAGS = (); }; };
 		CFBDAE651B8510CE009D576F /* StocksDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBDAE641B8510CE009D576F /* StocksDataController.swift */; };
 		CFD46C251B84BCCC00D5BD29 /* StockQuoteItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD46C241B84BCCC00D5BD29 /* StockQuoteItem.swift */; };
 		CFD46C271B84BD6200D5BD29 /* AlamofireRequest_ResponseJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD46C261B84BD6200D5BD29 /* AlamofireRequest_ResponseJSON.swift */; };
@@ -44,6 +45,7 @@
 		CF5F27C81B84AC00002039B1 /* grokPageViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = grokPageViewControllerTests.swift; sourceTree = "<group>"; };
 		CF5F27D21B84B4ED002039B1 /* GrokPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GrokPageViewController.swift; sourceTree = "<group>"; };
 		CF5F27D41B84B606002039B1 /* SinglePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SinglePageViewController.swift; sourceTree = "<group>"; };
+		CF6387441BCAB86900A36867 /* PersistenceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PersistenceManager.swift; path = ../PersistenceManager.swift; sourceTree = "<group>"; };
 		CFBDAE641B8510CE009D576F /* StocksDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StocksDataController.swift; path = ../StocksDataController.swift; sourceTree = "<group>"; };
 		CFD46C241B84BCCC00D5BD29 /* StockQuoteItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StockQuoteItem.swift; sourceTree = "<group>"; };
 		CFD46C261B84BD6200D5BD29 /* AlamofireRequest_ResponseJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlamofireRequest_ResponseJSON.swift; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 			children = (
 				CF5F27B21B84AC00002039B1 /* AppDelegate.swift */,
 				CF5F27D21B84B4ED002039B1 /* GrokPageViewController.swift */,
+				CF6387441BCAB86900A36867 /* PersistenceManager.swift */,
 				CFD46C241B84BCCC00D5BD29 /* StockQuoteItem.swift */,
 				CFBDAE641B8510CE009D576F /* StocksDataController.swift */,
 				CFD46C261B84BD6200D5BD29 /* AlamofireRequest_ResponseJSON.swift */,
@@ -302,6 +305,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CFBDAE651B8510CE009D576F /* StocksDataController.swift in Sources */,
+				CF6387451BCAB86900A36867 /* PersistenceManager.swift in Sources */,
 				CFD46C251B84BCCC00D5BD29 /* StockQuoteItem.swift in Sources */,
 				CF5F27D31B84B4ED002039B1 /* GrokPageViewController.swift in Sources */,
 				CFD46C271B84BD6200D5BD29 /* AlamofireRequest_ResponseJSON.swift in Sources */,
