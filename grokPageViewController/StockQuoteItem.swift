@@ -55,10 +55,10 @@ class StockQuoteItem: ResponseJSONObjectSerializable {
     return endpoint
   }
   
-  class func getFeedItems(symbols: Array<String>, completionHandler: (Result<[StockQuoteItem]>) -> Void) {
+  class func getFeedItems(symbols: Array<String>, completionHandler: (Result<[StockQuoteItem], NSError>) -> Void) {
     Alamofire.request(.GET, self.endpointForFeed(symbols))
-      .responseArrayAtPath(["query", "results", "quote"], completionHandler:{ (request, response, result: Result<[StockQuoteItem]>) in
-        completionHandler(result)
+      .responseArrayAtPath(["query", "results", "quote"], completionHandler:{ (response: Response<[StockQuoteItem], NSError>) in
+        completionHandler(response.result)
     })
   }
 }
