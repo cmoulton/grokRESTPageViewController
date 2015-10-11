@@ -15,8 +15,7 @@ class StocksDataController {
   func loadStockQuoteItems(completionHandler: (NSError?) -> Void) {
     let symbols = ["AAPL", "GOOG", "YHOO"]
     StockQuoteItem.getFeedItems(symbols, completionHandler:{ (result) in
-      if let error = result.error as? NSError
-      {
+      if let error = result.error {
         completionHandler(error)
         return
       }
