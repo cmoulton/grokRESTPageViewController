@@ -34,9 +34,11 @@ class GrokPageViewController: UIPageViewController, UIPageViewControllerDataSour
         self.presentViewController(alert, animated: true, completion: nil)
       } else {
         // set first view controller to display
-        if let firstVC = self.viewControllerAtIndex(0) {
-          let viewControllers = [firstVC]
-          self.setViewControllers(viewControllers, direction: UIPageViewControllerNavigationDirection.Forward, animated: false, completion: nil)
+        if self.dataController.dataObjects.count > 0 {
+          if let firstVC = self.viewControllerAtIndex(0) {
+            let viewControllers = [firstVC]
+            self.setViewControllers(viewControllers, direction: UIPageViewControllerNavigationDirection.Forward, animated: false, completion: nil)
+          }
         }
       }
     }
