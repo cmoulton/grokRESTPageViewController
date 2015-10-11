@@ -32,18 +32,24 @@ import Alamofire
 */
 // See https://developer.yahoo.com/yql/ for tool to create queries
 
-class StockQuoteItem: ResponseJSONObjectSerializable {
+class StockQuoteItem: NSObject, NSCoding, ResponseJSONObjectSerializable {
   let symbol: String?
   let ask: String?
   let yearHigh: String?
   let yearLow: String?
+  let timeSaved: NSDate?
   
-  required init?(json: SwiftyJSON.JSON) {
-    print(json)
-    self.symbol = json["symbol"].string
-    self.ask = json["Ask"].string
-    self.yearHigh = json["YearHigh"].string
-    self.yearLow = json["YearLow"].string
+  // MARK: Initializers
+  required init(symbol: String?, ask: String?, yearHigh: String?, yearLow: String?, timeSaved: NSDate?) {
+    self.symbol = symbol
+    self.ask = ask
+    self.yearHigh = yearHigh
+    self.yearLow = yearLow
+    self.timeSaved = timeSaved
+  }
+  
+  required convenience init?(json: SwiftyJSON.JSON) {
+    self.init(symbol: json["symbol"].string, ask: json["Ask"].string, yearHigh: json["YearHigh"].string, yearLow:json["YearLow"].string, timeSaved: NSDate())
   }
   
   class func endpointForFeed(symbols: Array<String>) -> String {
@@ -60,5 +66,23 @@ class StockQuoteItem: ResponseJSONObjectSerializable {
       .responseArrayAtPath(["query", "results", "quote"], completionHandler:{ (response: Response<[StockQuoteItem], NSError>) in
         completionHandler(response.result)
     })
+  }
+  
+  // MARK: - NSCoding
+  func encodeWithCoder(aCoder: NSCoder) {
+    aCoder.encodeObject(self.symbol, forKey: "symbol")
+    aCoder.encodeObject(self.ask, forKey: "ask")
+    aCoder.encodeObject(self.yearHigh, forKey: "yearHigh")
+    aCoder.encodeObject(self.yearLow, forKey: "yearLow")
+    aCoder.encodeObject(self.timeSaved, forKey: "timeSaved")
+  }
+  
+  required convenience init?(coder aDecoder: NSCoder) {
+    let symbol = aDecoder.decodeObjectForKey("symbol") as? String
+    let ask = aDecoder.decodeObjectForKey("ask") as? String
+    let yearHigh = aDecoder.decodeObjectForKey("yearHigh") as? String
+    let yearLow = aDecoder.decodeObjectForKey("yearLow") as? String
+    let timeSaved = aDecoder.decodeObjectForKey("timeSaved") as? NSDate
+    self.init(symbol: symbol, ask: ask, yearHigh: yearHigh, yearLow: yearLow, timeSaved: timeSaved)
   }
 }
