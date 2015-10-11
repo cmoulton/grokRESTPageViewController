@@ -23,10 +23,14 @@ class GrokPageViewController: UIPageViewController, UIPageViewControllerDataSour
     self.setViewControllers([placeholderVC], direction: UIPageViewControllerNavigationDirection.Forward, animated: false, completion: nil)
     
     dataController.loadStockQuoteItems{ (error) in
-      if error != nil
-      {
-        let alert = UIAlertController(title: "Error", message: "Could not load stock quotes \(error?.localizedDescription)", preferredStyle: UIAlertControllerStyle.Alert)
-        alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.Default, handler: nil))
+      if error != nil {
+        let alert:UIAlertController
+        if let description = error?.localizedDescription {
+          alert = UIAlertController(title: "Error", message: "Could not load stock quotes \(description)", preferredStyle: UIAlertControllerStyle.Alert)
+        } else {
+          alert = UIAlertController(title: "Error", message: "Could not load stock quotes", preferredStyle: UIAlertControllerStyle.Alert)
+        }
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
         self.presentViewController(alert, animated: true, completion: nil)
       } else {
         // set first view controller to display
